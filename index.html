@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>AIS For Fishing</title>
+    <meta
+      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
+      name="viewport"
+    />
+    <link
+      rel="icon"
+      href="assets/img/kaiadmin/favicon.ico"
+      type="image/x-icon"
+    />
+
+    <!-- Fonts and icons -->
+    <script src="assets/js/plugin/webfont/webfont.min.js"></script>
+    <script>
+      WebFont.load({
+        google: { families: ["Public Sans:300,400,500,600,700"] },
+        custom: {
+          families: [
+            "Font Awesome 5 Solid",
+            "Font Awesome 5 Regular",
+            "Font Awesome 5 Brands",
+            "simple-line-icons",
+          ],
+          urls: ["assets/css/fonts.min.css"],
+        },
+        active: function () {
+          sessionStorage.fonts = true;
+        },
+      });
+    </script>
+
+    <!-- CSS Files -->
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/plugins.min.css" />
+    <link rel="stylesheet" href="assets/css/kaiadmin.min.css" />
+
+    <!-- CSS Just for demo purpose, don't include it in your project -->
+    <link rel="stylesheet" href="assets/css/demo.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <!-- Sidebar -->
+      <div class="sidebar" data-background-color="dark">
+        <div class="sidebar-logo">
+          <!-- Logo Header -->
+          <div class="logo-header" data-background-color="dark">
+            <a href="index.html" class="logo">
+              <img
+                src="assets/img/kaiadmin/logo_light.png"
+                alt="navbar brand"
+                class=""
+                height="100"
+              />
+            </a>
+            <!-- <h3 style="color:white">Sustainable Fisheries</h3> -->
+            <div class="nav-toggle">
+              <button class="btn btn-toggle toggle-sidebar">
+                <i class="gg-menu-right"></i>
+              </button>
+              <button class="btn btn-toggle sidenav-toggler">
+                <i class="gg-menu-left"></i>
+              </button>
+            </div>
+            <button class="topbar-toggler more">
+              <i class="gg-more-vertical-alt"></i>
+            </button>
+          </div>
+          <!-- End Logo Header -->
+        </div>
+        <div class="sidebar-wrapper scrollbar scrollbar-inner">
+          <div class="sidebar-content">
+            <ul class="nav nav-secondary">
+              <li class="nav-item active">
+                <a
+                  data-bs-toggle="collapse"
+                  href="../index.html"
+                  class="collapsed"
+                  aria-expanded="false"
+                >
+                  <i class="fas fa-home"></i>
+                  <p>Home</p>
+                </a>
+                
+              </li>
+              <li class="nav-section">
+                <span class="sidebar-mini-icon">
+                  <i class="fa fa-ellipsis-h"></i>
+                </span>
+                <h4 class="text-section">Components</h4>
+              </li>
+              <!-- AIS Side bar -->
+              <li class="nav-item">
+                <a data-bs-toggle="collapse" href="#AISData">
+                  <i class="fas fa-ship"></i>
+                  <p>AIS Data</p>
+                  <span class="caret"></span>
+                </a>
+                <div class="collapse" id="AISData">
+                  <ul class="nav nav-collapse">
+                    <li>
+                      <a href="components/ais_T1.html">
+                        <span class="sub-item">Trajectory Training Data</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="components/ais_H31.html">
+                        <span class="sub-item">H3 Fishing Area Training Data</span>
+                      </a>
+                    </li>
+                    <li >
+                      <a href="components/ais_CTN1.html">
+                        <span class="sub-item">Country, Transponder, & Navigasi Status Training Data </span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="components/ais_T2.html">
+                        <span class="sub-item">Trajectory Predicting Data</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="components/ais_H32.html">
+                        <span class="sub-item">H3 Fishing Area Predicting Data</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="components/ais_CTN2.html">
+                        <span class="sub-item">Country, Transponder, & Navigasi Status Predicting Data </span>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+              <!-- VMS SIde bar -->
+              <li class="nav-item">
+                <a data-bs-toggle="collapse" href="#VMSData">
+                  <i class="fas fa-anchor"></i>
+                  <p>VMS Data</p>
+                  <span class="caret"></span>
+                </a>
+                <div class="collapse" id="VMSData">
+                  <ul class="nav nav-collapse">
+                    <li>
+                      <a href="components/vms_JVU.html">
+                        <span class="sub-item">Jumlah Vessel Unik</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="components/vms_gt.html">
+                        <span class="sub-item">Gear Type</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="components/vms_durasi.html">
+                        <span class="sub-item">Durasi Penangkapan Ikan</span>
+                      </a>
+                    </li>
+                    
+                  </ul>
+                </div>
+              </li>
+              <!-- Data Lingkungan -->
+              <li class="nav-item">
+                <a data-bs-toggle="collapse" href="#DataLingkungan">
+                  <i class="fas fa-fish"></i>
+                  <p>Data Lingkungan</p>
+                  <span class="caret"></span>
+                </a>
+                <div class="collapse" id="DataLingkungan">
+                  <ul class="nav nav-collapse">
+                    <li>
+                      <a href="components/potential1.html">
+                        <span class="sub-item">Potential Zone Training Data</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="components/potential2.html">
+                        <span class="sub-item">Potential Zone Predicting Data</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="components/bathy.html">
+                        <span class="sub-item">Bathymetry</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="components/chla.html">
+                        <span class="sub-item">Chl-a</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="components/SST.html">
+                        <span class="sub-item">SST</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="components/SLA.html">
+                        <span class="sub-item">SLA</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="components/salinity.html">
+                        <span class="sub-item">Salinity</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="components/wind.html">
+                        <span class="sub-item">Wind Speed</span>
+                      </a>
+                    </li>
+                    
+                  </ul>
+                </div>
+              </li>
+              <!-- Data Integrasi -->
+              <li class="nav-item">
+                <a data-bs-toggle="collapse" href="#DataIntegrasi">
+                  <i class="fas fa-database"></i>
+                  <p>Data Integrasi</p>
+                  <span class="caret"></span>
+                </a>
+                <div class="collapse" id="DataIntegrasi">
+                  <ul class="nav nav-collapse">
+                    <li>
+                      <a href="components/pro1.html">
+                        <span class="sub-item">Produktive Area Training</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="components/pro2.html">
+                        <span class="sub-item">Produktive Area Predicting</span>
+                      </a>
+                    </li>
+                                        
+                  </ul>
+                </div>
+              </li>
+              <!-- Docs -->
+              
+              <li class="nav-item">
+                <a data-bs-toggle="collapse" href="#Docs">
+                  <i class="fas fa-book-open"></i>
+                  <p>Documentation</p>
+                  <span class="caret"></span>
+                </a>
+                <div class="collapse" id="Docs">
+                  <ul class="nav nav-collapse">
+                    <li>
+                      <a href="components/LB.html">
+                        <span class="sub-item">Latar Belakang</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="components/masalah.html">
+                        <span class="sub-item">Identifikasi Masalah</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="components/Tujuan.html">
+                        <span class="sub-item">Tujuan</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="components/Pterdahulu.html">
+                        <span class="sub-item">Penelitian Terdahulu</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="components/Landasan.html">
+                        <span class="sub-item">Landasan Teori</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="components/Metodologi.html">
+                        <span class="sub-item">Metodologi</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="components/HasilPembahasan.html">
+                        <span class="sub-item">Hasil & Pembahasan</span>
+                      </a>
+                    </li>
+                                        
+                  </ul>
+                </div>
+              </li>
+              <!-- Lainnya side bar-->
+              <li class="nav-item">
+                <a data-bs-toggle="collapse" href="#Lainnya">
+                  <i class="fas fa-chart-bar"></i>
+                  <p>Lainnya</p>
+                  <span class="caret"></span>
+                </a>
+                <div class="collapse" id="Lainnya">
+                  <ul class="nav nav-collapse">
+                    <li>
+                      <a href="components/hasil_chart.html">
+                        <span class="sub-item">Chart Hasil Penelitian</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="components/pendukung_chart.html">
+                        <span class="sub-item">Chart Pendukung</span>
+                      </a>
+                    </li>
+                    
+                  </ul>
+                </div>
+              </li>
+
+            </ul>
+          </div>
+        </div>
+      </div>
+      <!-- End Sidebar -->
+
+      <div class="main-panel">
+        <div class="main-header">
+          <div class="main-header-logo">
+            <!-- Logo Header -->
+            <div class="logo-header" data-background-color="dark">
+              <a href="index.html" class="logo">
+                <img
+                  src="assets/img/kaiadmin/logo_light.png"
+                  alt="navbar brand"
+                  class="navbar-brand"
+                  height="20"
+                />
+              </a>
+              <div class="nav-toggle">
+                <button class="btn btn-toggle toggle-sidebar">
+                  <i class="gg-menu-right"></i>
+                </button>
+                <button class="btn btn-toggle sidenav-toggler">
+                  <i class="gg-menu-left"></i>
+                </button>
+              </div>
+              <button class="topbar-toggler more">
+                <i class="gg-more-vertical-alt"></i>
+              </button>
+            </div>
+            <!-- End Logo Header -->
+          </div>
+          <!-- Navbar Header -->
+          <nav
+            class="navbar navbar-header navbar-header-transparent navbar-expand-lg border-bottom"
+          >
+            <div class="container-fluid">
+              <nav
+                class="navbar navbar-header-left navbar-expand-lg navbar-form nav-search p-0 d-none d-lg-flex"
+              >
+                  <h1>Dashboard AIS For Fishing Project</h1>
+                  
+              </nav>
+
+              <ul class="navbar-nav topbar-nav ms-md-auto align-items-center">
+            
+                <li class="nav-item topbar-user dropdown hidden-caret">
+                  <a
+                    class="dropdown-toggle profile-pic"
+                    data-bs-toggle="dropdown"
+                    href="#"
+                    aria-expanded="false"
+                  >
+                    <div class="avatar-sm">
+                      <img
+                        src="assets/img/profile.jpg"
+                        alt="..."
+                        class="avatar-img rounded-circle"
+                      />
+                    </div>
+                    <span class="profile-username">
+                      <span class="op-7">by,</span>
+                      <span class="fw-bold">Hamdani</span>
+                    </span>
+                  </a>
+                  <ul class="dropdown-menu dropdown-user animated fadeIn">
+                    <div class="dropdown-user-scroll scrollbar-outer">
+                      <li>
+                        <div class="user-box">
+                          <div class="avatar-lg">
+                            <img
+                              src="assets/img/profile.jpg"
+                              alt="image profile"
+                              class="avatar-img rounded"
+                            />
+                          </div>
+                          <div class="u-text">
+                            <h4>Hamdani</h4>
+                            <p class="text-muted">hamdadani18@gmail.com</p>
+                            <a
+                              href="https://www.linkedin.com/in/hamdadani/"
+                              class="btn btn-xs btn-secondary btn-sm"
+                              >View Profile</a
+                            >
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">NIM 222112085</a>
+                        <a class="dropdown-item" href="#">Kelas 4SD3</a>
+                        <a class="dropdown-item" href="#">Peminatan Sains Data</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Program Studi Komputasi Statistik</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#">Politeknik Statistika STIS</a>
+                      </li>
+                    </div>
+                  </ul> 
+                </li>
+              </ul>
+            </div>
+          </nav>
+          <!-- End Navbar -->
+        </div>
+
+        <div class="container">
+          <div class="page-inner">
+            <div
+              class="d-flex align-items-left align-items-md-center flex-column flex-md-row pt-2 pb-4"
+            >
+              <div>
+                <h3 class="fw-bold mb-3">Integrasi Data Multisumber untuk Pemetaan Zona Potensi Produktif Perikanan Tangkap Laut Spesies Tuna</h3>
+                <h6 class="op-7 mb-2">(Studi Kasus : WPPNRI 714,715, 716, & 717)</h6>
+              </div>
+              
+            </div>
+            <div class="row">
+              <div class="col-sm-6 col-md-3">
+                <div class="card card-stats card-round">
+                  <div class="card-body">
+                    <div class="row align-items-center">
+                      <div class="col-icon">
+                        <div
+                          class="icon-big text-center icon-primary bubble-shadow-small"
+                        >
+                          <i class="fas fa-ship"></i>
+                        </div>
+                      </div>
+                      <div class="col col-stats ms-3 ms-sm-0">
+                        <div class="numbers">
+                          <p class="card-category">Visualisasi</p>
+                          <h4 class="card-title">AIS Data</h4>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-3">
+                <div class="card card-stats card-round">
+                  <div class="card-body">
+                    <div class="row align-items-center">
+                      <div class="col-icon">
+                        <div
+                          class="icon-big text-center icon-info bubble-shadow-small"
+                        >
+                          <i class="fas fa-anchor"></i>
+                        </div>
+                      </div>
+                      <div class="col col-stats ms-3 ms-sm-0">
+                        <div class="numbers">
+                          <p class="card-category">Visualisasi</p>
+                          <h4 class="card-title">VMS Data</h4>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-3">
+                <div class="card card-stats card-round">
+                  <div class="card-body">
+                    <div class="row align-items-center">
+                      <div class="col-icon">
+                        <div
+                          class="icon-big text-center icon-success bubble-shadow-small"
+                        >
+                          <i class="fas fa-fish"></i>
+                        </div>
+                      </div>
+                      <div class="col col-stats ms-3 ms-sm-0">
+                        <div class="numbers">
+                          <p class="card-category">Visualisasi</p>
+                          <h4 class="card-title">Data Lingkungan</h4>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm-6 col-md-3">
+                <div class="card card-stats card-round">
+                  <div class="card-body">
+                    <div class="row align-items-center">
+                      <div class="col-icon">
+                        <div
+                          class="icon-big text-center icon-secondary bubble-shadow-small"
+                        >
+                          <i class="fas fa-database"></i>
+                        </div>
+                      </div>
+                      <div class="col col-stats ms-3 ms-sm-0">
+                        <div class="numbers">
+                          <p class="card-category">Visualisasi</p>
+                          <h4 class="card-title">Data Integrasi</h4>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-8">
+                <div class="card card-round">
+                  <div class="card-header">
+                    <div class="card-head-row">
+                      <div class="card-title">Abstract</div>                 
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <div class="chart-container" style="min-height: 300px">
+                      <p style="text-align: justify">Menentukan fishing ground tanpa mengetahui data historis merupakan pekerjaan yang sulit. 
+                        Biasanya, setelah lokasi yang baik ditemukan, kapal-kapal akan bergerak menuju area tersebut dan cenderung 
+                        memancing bersama. Salah satu masalah yang dapat ditimbulkan adalah overfishing. Penelitian ini berfokus pada 
+                        bagaimana mengidentifikasi suatu area lautan yang berpotensi produktif tanpa mengetahui informasi mengenai sebelumnya. 
+                        Hasil penelitian ini diharapkan dapat mencegah overfishing dan bycatch, serta menjaga keberlanjutan ekosistem lautan. Metode 
+                        yang digunakan adalah pengintegrasian big data seperti data AIS, VMS, citra satelit, dan data lingkungan. Pengintegrasian data 
+                        ini dilakukan untuk mendapatkan training dataset yang digunakan dalam membuat model klasifikasi dengan machine learning. Penelitian 
+                        ini menghasilkan <span class="fw-bold">model terbaik Random Forest</span> dengan nilai <span class="fw-bold">f1-score sebesar 66.67 %</span>. Hasil penelitian ini berupa estimasi area yang disajikan 
+                        dalam sebuah dashboard interaktif.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div class="card card-info card-annoucement card-round">
+                  <div class="card-body text-center">
+                    <div class="card-opening">Keyword</div>
+                    <div class="card-desc">
+                      AIS Data, VMS Data, Enviromental Data, Random Forest, Fishing Ground.
+                    </div>
+                    <div class="card-detail">
+                      <div class="btn btn-light btn-rounded">View Detail</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="card card-round">
+                  <div class="card-body">
+                    <div class="card-title fw-mediumbold">Dosen Pembimbing & Penguji</div>
+                    <div class="card-list">
+                      <div class="item-list">
+                        <div class="avatar">
+                          <img
+                            src="assets/img/profsetia.jpg"
+                            alt="..."
+                            class="avatar-img rounded-circle"
+                          />
+                        </div>
+                        <div class="info-user ms-3">
+                          <a href="https://stis.ac.id/dosen/ks/detail/Set001" style="text-decoration: none;">
+                            <div class="username">Prof. Setia Pramana, S.Si, M.Sc, Ph.D</div>
+                          </a>                          
+                          <div class="status">Dosen Pembimbing</div>
+                        </div>
+                       
+                      </div>
+                      <div class="item-list">
+                        <div class="avatar">
+                          <img
+                            src="assets/img/jm_denis.jpg"
+                            alt="..."
+                            class="avatar-img rounded-circle"
+                          />
+                        </div>
+                        <div class="info-user ms-3">
+                          <a href="https://stis.ac.id/dosen/ks/detail/Bud004" style="text-decoration: none;"><div class="username">Budi Yuniarto, S.S.T., M.Si</div></a>
+                          <div class="status">Dosen Penguji 1</div>
+                        </div>
+                        
+                      </div>
+                      <div class="item-list">
+                        <div class="avatar">
+                          <img
+                            src="assets/img/chadengle.jpg"
+                            alt="..."
+                            class="avatar-img rounded-circle"
+                          />
+                        </div>
+                        <div class="info-user ms-3">
+                          <a href="https://stis.ac.id/dosen/ks/detail/Rin007" style="text-decoration: none;"><div class="username">Dr. Rindang Bangun Prasetyo, S.S.T., M.Si.</div></a>
+                          <div class="status">Dosen Penguji 2</div>
+                        </div>
+                        
+                      </div>
+                    </div>
+            
+                    
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <footer class="footer">
+          <div class="container-fluid d-flex justify-content-between">
+            <nav class="pull-left">
+             
+            </nav>
+            <div class="copyright">
+              2025, made with <i class="fa fa-heart heart text-danger"></i> by
+              <a href="https://www.linkedin.com/in/hamdadani/">Hamdani</a>
+            </div>
+            <div>
+              
+            </div>
+          </div>
+        </footer>
+      </div>
+
+      <!-- Custom template | don't include it in your project! -->
+      
+      <!-- End Custom template -->
+    </div>
+    <!--   Core JS Files   -->
+    <script src="assets/js/core/jquery-3.7.1.min.js"></script>
+    <script src="assets/js/core/popper.min.js"></script>
+    <script src="assets/js/core/bootstrap.min.js"></script>
+
+    <!-- jQuery Scrollbar -->
+    <script src="assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js"></script>
+
+    <!-- Chart JS -->
+    <script src="assets/js/plugin/chart.js/chart.min.js"></script>
+
+    <!-- jQuery Sparkline -->
+    <script src="assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js"></script>
+
+    <!-- Chart Circle -->
+    <script src="assets/js/plugin/chart-circle/circles.min.js"></script>
+
+    <!-- Datatables -->
+    <script src="assets/js/plugin/datatables/datatables.min.js"></script>
+
+    <!-- Bootstrap Notify -->
+    <script src="assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js"></script>
+
+    <!-- jQuery Vector Maps -->
+    <script src="assets/js/plugin/jsvectormap/jsvectormap.min.js"></script>
+    <script src="assets/js/plugin/jsvectormap/world.js"></script>
+
+    <!-- Sweet Alert -->
+    <script src="assets/js/plugin/sweetalert/sweetalert.min.js"></script>
+
+    <!-- Kaiadmin JS -->
+    <script src="assets/js/kaiadmin.min.js"></script>
+
+    <!-- Kaiadmin DEMO methods, don't include it in your project! -->
+    <script src="assets/js/setting-demo.js"></script>
+    <script src="assets/js/demo.js"></script>
+    <script>
+      $("#lineChart").sparkline([102, 109, 120, 99, 110, 105, 115], {
+        type: "line",
+        height: "70",
+        width: "100%",
+        lineWidth: "2",
+        lineColor: "#177dff",
+        fillColor: "rgba(23, 125, 255, 0.14)",
+      });
+
+      $("#lineChart2").sparkline([99, 125, 122, 105, 110, 124, 115], {
+        type: "line",
+        height: "70",
+        width: "100%",
+        lineWidth: "2",
+        lineColor: "#f3545d",
+        fillColor: "rgba(243, 84, 93, .14)",
+      });
+
+      $("#lineChart3").sparkline([105, 103, 123, 100, 95, 105, 115], {
+        type: "line",
+        height: "70",
+        width: "100%",
+        lineWidth: "2",
+        lineColor: "#ffa534",
+        fillColor: "rgba(255, 165, 52, .14)",
+      });
+    </script>
+  </body>
+</html>
